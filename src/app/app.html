@@ -1,0 +1,171 @@
+<div class="container">
+  <!-- Left spinning jersey -->
+  <div class="jersey-left">
+    <img src="/jersey.png" alt="KKR Jersey" class="jersey-spin">
+  </div>
+
+  <!-- Right spinning jersey -->
+  <div class="jersey-right">
+    <img src="/jersey.png" alt="KKR Jersey" class="jersey-spin">
+  </div>
+
+  <header class="header">
+    <h1 class="motto">
+      <span class="motto-word">KORBO</span>
+      <span class="motto-word">LORBO</span>
+      <span class="motto-word">JEETBO</span>
+    </h1>
+  </header>
+  <main class="main-content">
+    <div class="titles">
+      <div class="title year-2012">
+        <img src="/trophy.png" alt="2012 Trophy" class="trophy-image">
+        <span class="year-text">2012</span>
+      </div>
+      <div class="title year-2024">
+        <img src="/trophy.png" alt="2024 Trophy" class="trophy-image">
+        <span class="year-text">2024</span>
+      </div>
+      <div class="title year-2014">
+        <img src="/trophy.png" alt="2014 Trophy" class="trophy-image">
+        <span class="year-text">2014</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #6B46C1 0%, #FFD700 50%, #FFFFFF 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Spinning jersey - shared */
+  .jersey-left,
+  .jersey-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    perspective: 800px;
+  }
+
+  .jersey-left {
+    left: 20px;
+  }
+
+  .jersey-right {
+    right: 20px;
+  }
+
+  .jersey-spin {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    animation: spinY 4s linear infinite;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
+  }
+
+  @keyframes spinY {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  .header {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .motto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .motto-word {
+    display: inline-block;
+    background-color: #3B1F7E;
+    color: #FFFFFF;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .titles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .trophy-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+  }
+
+  .year-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+  }
+
+  .year-2024 {
+    transform: scale(1.2);
+  }
+
+  .year-2024 .trophy-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .year-2024 .year-text {
+    font-size: 2.5rem;
+  }
+
+  .year-2012, .year-2014 {
+    font-size: 3rem;
+  }
+</style>
+
