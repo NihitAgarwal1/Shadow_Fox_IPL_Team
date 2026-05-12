@@ -1,0 +1,179 @@
+<div class="container">
+  <!-- Top left logo -->
+  <div class="logo-container" routerLink="/">
+    <img src="/logo.png" alt="KKR Logo" class="logo">
+  </div>
+
+  <header class="header">
+    <h1 class="title-text">KKR CURRENT SQUAD 2026</h1>
+    <button class="back-btn" routerLink="/">Back to Home</button>
+  </header>
+
+  <main class="main-content">
+    <div class="table-container">
+      <table class="squad-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player Name</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of players; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>
+              <a [href]="getStatsUrl(player.name)" target="_blank" class="player-link">
+                {{ player.name }}
+              </a>
+            </td>
+            <td>{{ player.role }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Outfit', Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+  }
+
+  .container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/kkr-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    transform: scale(1.1);
+    z-index: -2;
+  }
+
+  .container::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(59, 31, 126, 0.8) 0%, rgba(107, 70, 193, 0.6) 100%);
+    z-index: -1;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }
+
+  .header {
+    text-align: center;
+    padding: 60px 20px 20px;
+  }
+
+  .title-text {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    margin: 0;
+    letter-spacing: 2px;
+  }
+
+  .back-btn {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .back-btn:hover {
+    background-color: #FFD700;
+    color: #3B1F7E;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .table-container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  .squad-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+  }
+
+  .squad-table th {
+    text-align: left;
+    padding: 15px;
+    background: rgba(59, 31, 126, 0.8);
+    color: #FFD700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #FFD700;
+  }
+
+  .squad-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+  }
+
+  .squad-table tr:hover {
+    background: rgba(255, 215, 0, 0.1);
+  }
+
+  .player-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+
+  .player-link:hover {
+    color: #FFD700;
+    text-decoration: underline;
+    transform: translateX(5px);
+  }
+</style>
