@@ -1,0 +1,194 @@
+.container {
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/kkr-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  transform: scale(1.05);
+  z-index: -2;
+}
+
+.container::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(107, 70, 193, 0.55) 0%, rgba(255, 215, 0, 0.35) 50%, rgba(59, 31, 126, 0.5) 100%);
+  z-index: -1;
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #3b1f7e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home-btn {
+  background-color: #ffd700;
+  color: #3b1f7e;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Impact', sans-serif;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.nav-title {
+  margin-right: 32px;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #ffd700;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 96px 20px 48px;
+}
+
+.record-layout {
+  width: min(92%, 980px);
+}
+
+.records-board {
+  width: 100%;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(18, 10, 45, 0.32);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.records-heading {
+  margin: 0;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 3px;
+  color: #ffd700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.record-point {
+  min-height: 96px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(59, 31, 126, 0.78);
+  border-left: 5px solid #ffd700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.record-media {
+  flex: 0 0 240px;
+}
+
+.record-image {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.record-copy {
+  flex: 1;
+}
+
+.record-label {
+  display: inline;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 0.5px;
+}
+
+.record-detail {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #fff7cf;
+  margin-left: 6px;
+}
+
+@media (max-width: 640px) {
+  .top-nav {
+    padding: 0 12px;
+  }
+
+  .nav-title {
+    margin-right: 0;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .records-board {
+    padding: 18px;
+  }
+
+  .records-heading {
+    font-size: 1.45rem;
+  }
+
+  .record-point {
+    min-height: 120px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .record-media {
+    flex: none;
+  }
+
+  .record-image {
+    height: 190px;
+  }
+
+  .record-label,
+  .record-detail {
+    display: block;
+    margin-left: 0;
+  }
+
+  .record-detail {
+    margin-top: 8px;
+    font-size: 0.98rem;
+  }
+}
