@@ -18,5 +18,6 @@ designed to give fans a sleek and engaging experience.
 -Fully responsive design for mobile and desktop
 
  Tech Stack
-- Frontend:HTML / CSS / JavaScript  *(or React — update as needed)*
+- Frontend:HTML / CSS / JavaScript / Typescript
+  
 - Deployment: [Vercel](https://vercel.com)
