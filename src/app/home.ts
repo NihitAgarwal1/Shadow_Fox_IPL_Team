@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html'
 })
 export class HomeComponent implements AfterViewInit {
-  protected readonly title = signal('IPL_Team');
+  protected readonly title = signal('KOLKATA KNIGHT RIDERS');
 
   ngAfterViewInit() {
     const images = document.querySelectorAll<HTMLImageElement>('.trophy-image, .jersey-spin');
